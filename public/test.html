@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script src="js/lib/jquery/jquery-1.7.2.min.js" language="javascript"></script>
+
+<link rel="stylesheet" href="js/lib/jquery/plugins/imagepicker/imagepicker.css" />
+<script src="js/lib/jquery/plugins/imagepicker/imagePicker.js" language="javascript"></script>
+
+<script language="javascript">
+    $(document).ready(function(){
+        $('div.picker').each(function(){
+            var p = $(this);
+            $(this).ImagePicker({
+                searchTerm: $(this).data('term'),
+                imageSize: 35,
+                imageRows : 4,
+                imageColumns : 3,
+                onItemSelect: function(item){
+                    p.find('.thumb').attr('src', item.url);
+                }
+            })
+    	});
+    });
+</script>
+</head>
+
+<body>
+BEACH : <br />
+<div class="picker" data-term="beach"><img class="thumb" src=""  style="width:75px; height:75px; border:1px #000 solid;"/></div>
+CARS : <br />
+<div class="picker" data-term="car"><img class="thumb" src=""  style="width:75px; height:75px; border:1px #000 solid;"/></div>
+TREES : <br />
+<div class="picker" data-term="trees"><img class="thumb" src=""  style="width:75px; height:75px; border:1px #000 solid;"/></div>
+UFOS : <br />
+<div class="picker" data-term="ufo"><img class="thumb" src=""  style="width:75px; height:75px; border:1px #000 solid;"/></div>
+</body>
+
+</html>
